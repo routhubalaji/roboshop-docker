@@ -16,7 +16,9 @@ services:
     - mongodb  
 
   redis:
-    build: ./redis
+    build: 
+      context: ./redis
+      dockerfile: Dockerfile
     image: redis:7
     container_name: redis
     volumes:
@@ -33,7 +35,9 @@ services:
 
 
   rabbitmq:
-    build: ./rabbitmq
+    build: 
+      context: ./rabbitmq
+      dockerfile: Dockerfile
     image: rabbitmq:3
     container_name: rabbitmq
     volumes:
