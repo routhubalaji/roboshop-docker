@@ -14,6 +14,7 @@ WORKDIR /opt/server
 ENV CART_ENDPOINT="cart:8080" \
     DB_HOST="mysql"
 
+USER roboshop
 COPY --from=build --chown=roboshop:roboshop /opt/server/shipping.jar .    
 ENTRYPOINT ["java","-jar","shipping.jar"]
 
