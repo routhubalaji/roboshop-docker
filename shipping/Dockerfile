@@ -16,7 +16,7 @@ ENV CART_ENDPOINT="cart:8080" \
 
 USER roboshop
 COPY --from=build --chown=roboshop:roboshop /opt/server/shipping.jar .    
-ENTRYPOINT ["java","-jar","shipping.jar"]
+ENTRYPOINT ["sh", "-c", "sleep 30 && java -jar shipping.jar"]
 
 
 
